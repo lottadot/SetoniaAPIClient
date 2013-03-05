@@ -43,4 +43,90 @@
 }
 
 
++ (void)loadMoviesFromQuery:(NSString *)query withBlock:(void (^)(NSArray *groups, NSError *error))block {
+    NSParameterAssert(query);
+    
+    LDTSetoniaAPIClient *api = [LDTSetoniaAPIClient sharedClient];
+    
+    NSDictionary *params = @{ @"q" : query };
+    
+    // http://setonia.com/V1/movies.php?q={QUERY}&limit={number of results you want to see}
+    
+    [[LDTMeetupAPIClient sharedClient] getPath:@"/v1/movies.php"
+                                    parameters:params
+                                       success:^(AFHTTPRequestOperation *operation, id JSON){
+                                           NSArray *response = (NSArray *)JSON;
+                                           if (block) {
+                                               block(results, nil);
+                                           }
+                                           
+                                       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                           NSURL *url = [[operation request] URL];
+                                           NSLog(@"loadMoviesFromQuery:%@ url:%@",
+                                                 [error localizedDescription],
+                                                 [url absoluteString]);
+                                           if (block) {
+                                               block([NSArray array], error);
+                                           }
+                                       }];
+}
+
+
++ (void)loadSearchFromQuery:(NSString *)query withBlock:(void (^)(NSArray *groups, NSError *error))block {
+    NSParameterAssert(query);
+    
+    LDTSetoniaAPIClient *api = [LDTSetoniaAPIClient sharedClient];
+    
+    NSDictionary *params = @{ @"q" : query };
+    
+    // http://setonia.com/V1/search.php?q={QUERY}&limit={number of results you want to see}
+    
+    [[LDTMeetupAPIClient sharedClient] getPath:@"/v1/search.php"
+                                    parameters:params
+                                       success:^(AFHTTPRequestOperation *operation, id JSON){
+                                           NSArray *response = (NSArray *)JSON;
+                                           if (block) {
+                                               block(results, nil);
+                                           }
+                                           
+                                       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                           NSURL *url = [[operation request] URL];
+                                           NSLog(@"loadSearchFromQuery:%@ url:%@",
+                                                 [error localizedDescription],
+                                                 [url absoluteString]);
+                                           if (block) {
+                                               block([NSArray array], error);
+                                           }
+                                       }];
+}
+
+
++ (void)loadSportsFromQuery:(NSString *)query withBlock:(void (^)(NSArray *groups, NSError *error))block {
+    NSParameterAssert(query);
+    
+    LDTSetoniaAPIClient *api = [LDTSetoniaAPIClient sharedClient];
+    
+    NSDictionary *params = @{ @"q" : query };
+    
+    // http://setonia.com/V1/sports.php?q={QUERY}&limit={number of results you want to see} 
+    
+    [[LDTMeetupAPIClient sharedClient] getPath:@"/v1/sports.php"
+                                    parameters:params
+                                       success:^(AFHTTPRequestOperation *operation, id JSON){
+                                           NSArray *response = (NSArray *)JSON;
+                                           if (block) {
+                                               block(results, nil);
+                                           }
+                                           
+                                       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                           NSURL *url = [[operation request] URL];
+                                           NSLog(@"loadSportsFromQuery:%@ url:%@",
+                                                 [error localizedDescription],
+                                                 [url absoluteString]);
+                                           if (block) {
+                                               block([NSArray array], error);
+                                           }
+                                       }];
+}
+
 @end
