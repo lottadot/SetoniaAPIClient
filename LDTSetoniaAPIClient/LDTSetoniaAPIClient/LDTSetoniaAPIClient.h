@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "AFJSONRequestOperation.h"
+#import "LDTSetoniaHTTPClient.h"
 
-@class "LDTSetoniaHTTPClient"
+@class LDTSetoniaHTTPClient;
 
-@interface LDTSetoniaAPIClient : NSObject
+@interface LDTSetoniaAPIClient : LDTSetoniaHTTPClient
 
 
 + (LDTSetoniaAPIClient *)sharedClient;

@@ -18,6 +18,9 @@
 		3430755516E5922E009141C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3430755316E5922E009141C6 /* InfoPlist.strings */; };
 		3430755816E5922E009141C6 /* LDTSetoniaAPIClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430755716E5922E009141C6 /* LDTSetoniaAPIClientTests.m */; };
 		3430756316E59C33009141C6 /* LDTSetoniaHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430756216E59C33009141C6 /* LDTSetoniaHTTPClient.m */; };
+		3430757716E5A70F009141C6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430757616E5A70F009141C6 /* SystemConfiguration.framework */; };
+		3430757916E5A71B009141C6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430757816E5A71B009141C6 /* MobileCoreServices.framework */; };
+		3430757A16E5A77D009141C6 /* LDTSetoniaHTTPClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3430756116E59C33009141C6 /* LDTSetoniaHTTPClient.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,7 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				3430757A16E5A77D009141C6 /* LDTSetoniaHTTPClient.h in CopyFiles */,
 				3430753F16E5922E009141C6 /* LDTSetoniaAPIClient.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,6 +62,8 @@
 		3430755716E5922E009141C6 /* LDTSetoniaAPIClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDTSetoniaAPIClientTests.m; sourceTree = "<group>"; };
 		3430756116E59C33009141C6 /* LDTSetoniaHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDTSetoniaHTTPClient.h; sourceTree = "<group>"; };
 		3430756216E59C33009141C6 /* LDTSetoniaHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDTSetoniaHTTPClient.m; sourceTree = "<group>"; };
+		3430757616E5A70F009141C6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3430757816E5A71B009141C6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		42FDA288C0AC4498A0D3DCBA /* Pods-LDTSetoniaAPIClient.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDTSetoniaAPIClient.xcconfig"; path = "../Pods/Pods-LDTSetoniaAPIClient.xcconfig"; sourceTree = SOURCE_ROOT; };
 		7A7BEC61EE3C440BA515F7B4 /* libPods-LDTSetoniaAPIClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LDTSetoniaAPIClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -67,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3430757916E5A71B009141C6 /* MobileCoreServices.framework in Frameworks */,
+				3430757716E5A70F009141C6 /* SystemConfiguration.framework in Frameworks */,
 				3430753A16E5922E009141C6 /* Foundation.framework in Frameworks */,
 				2071C4B783E34A69A1A908D5 /* libPods-LDTSetoniaAPIClient.a in Frameworks */,
 			);
@@ -109,6 +117,8 @@
 		3430753816E5922E009141C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3430757816E5A71B009141C6 /* MobileCoreServices.framework */,
+				3430757616E5A70F009141C6 /* SystemConfiguration.framework */,
 				3430753916E5922E009141C6 /* Foundation.framework */,
 				3430754816E5922E009141C6 /* SenTestingKit.framework */,
 				3430754A16E5922E009141C6 /* UIKit.framework */,

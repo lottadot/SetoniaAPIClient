@@ -28,9 +28,8 @@
 - (id)initWithBaseURL:(NSURL *)url {
     NSParameterAssert(url);
     
-    self = [super init];
+    self = [super initWithBaseURL:url];
     if (!self) {
-        _url = url;
         return nil;
     }
 
@@ -46,18 +45,16 @@
 + (void)loadMoviesFromQuery:(NSString *)query withBlock:(void (^)(NSArray *groups, NSError *error))block {
     NSParameterAssert(query);
     
-    LDTSetoniaAPIClient *api = [LDTSetoniaAPIClient sharedClient];
-    
     NSDictionary *params = @{ @"q" : query };
     
     // http://setonia.com/V1/movies.php?q={QUERY}&limit={number of results you want to see}
     
-    [[LDTMeetupAPIClient sharedClient] getPath:@"/v1/movies.php"
+    [[LDTSetoniaAPIClient sharedClient] getPath:@"/v1/movies.php"
                                     parameters:params
                                        success:^(AFHTTPRequestOperation *operation, id JSON){
                                            NSArray *response = (NSArray *)JSON;
                                            if (block) {
-                                               block(results, nil);
+                                               block(response, nil);
                                            }
                                            
                                        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -75,18 +72,16 @@
 + (void)loadSearchFromQuery:(NSString *)query withBlock:(void (^)(NSArray *groups, NSError *error))block {
     NSParameterAssert(query);
     
-    LDTSetoniaAPIClient *api = [LDTSetoniaAPIClient sharedClient];
-    
     NSDictionary *params = @{ @"q" : query };
     
     // http://setonia.com/V1/search.php?q={QUERY}&limit={number of results you want to see}
     
-    [[LDTMeetupAPIClient sharedClient] getPath:@"/v1/search.php"
+    [[LDTSetoniaAPIClient sharedClient] getPath:@"/v1/search.php"
                                     parameters:params
                                        success:^(AFHTTPRequestOperation *operation, id JSON){
                                            NSArray *response = (NSArray *)JSON;
                                            if (block) {
-                                               block(results, nil);
+                                               block(response, nil);
                                            }
                                            
                                        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -104,18 +99,16 @@
 + (void)loadSportsFromQuery:(NSString *)query withBlock:(void (^)(NSArray *groups, NSError *error))block {
     NSParameterAssert(query);
     
-    LDTSetoniaAPIClient *api = [LDTSetoniaAPIClient sharedClient];
-    
     NSDictionary *params = @{ @"q" : query };
     
     // http://setonia.com/V1/sports.php?q={QUERY}&limit={number of results you want to see} 
     
-    [[LDTMeetupAPIClient sharedClient] getPath:@"/v1/sports.php"
+    [[LDTSetoniaAPIClient sharedClient] getPath:@"/v1/sports.php"
                                     parameters:params
                                        success:^(AFHTTPRequestOperation *operation, id JSON){
                                            NSArray *response = (NSArray *)JSON;
                                            if (block) {
-                                               block(results, nil);
+                                               block(response, nil);
                                            }
                                            
                                        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

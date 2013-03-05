@@ -7,6 +7,8 @@
 //
 
 #import "LDTSetoniaDataManager.h"
+// TODO (szatezalo, 2013-03-04) import LDTSetoniaAPIClient
+#import <LDTSetoniaAPIClient/LDTSetoniaAPIClient.h>
 
 @implementation LDTSetoniaDataManager
 
@@ -19,6 +21,30 @@
     });
     
     return _sharedClient;
+}
+
+
++ (void)moviesWithQuery:(NSString *)query
+         withCompletion:(void (^)(NSArray *movies, NSError *error))completion
+           withProgress:(void (^)(NSString *progressInfo))progress {
+    // TODO (szatezalo, 2013-03-04) moviesWithQuery
+    NSAssert(NO,@"Not Implemented");
+}
+
+
++ (void)sportsWithQuery:(NSString *)query
+         withCompletion:(void (^)(NSArray *movies, NSError *error))completion
+           withProgress:(void (^)(NSString *progressInfo))progress {
+    // TODO (szatezalo, 2013-03-04) sportsWithQuery
+    NSAssert(NO,@"Not Implemented");
+}
+
+
++ (void)searchWithQuery:(NSString *)query
+         withCompletion:(void (^)(NSArray *movies, NSError *error))completion
+           withProgress:(void (^)(NSString *progressInfo))progress {
+    // TODO (szatezalo, 2013-03-04) searchWithQuery
+    NSAssert(NO,@"Not Implemented");
 }
 
 
