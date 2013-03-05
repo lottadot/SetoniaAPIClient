@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class LDTSetoniaAPIClient, Product;
+
 typedef void (^LDTSetoniaDataManagerProgressBlock) (NSString *progressInfo);
 typedef void (^LDTSetoniaDataManagerCompletionBlock) (NSArray *results, NSError *error);
 
 @interface LDTSetoniaDataManager : NSObject
 
+@property (weak, nonatomic) LDTSetoniaAPIClient *apiClient;
 
 + (LDTSetoniaDataManager *)sharedClient;
 
