@@ -7,7 +7,41 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AFJSONRequestOperation.h"
+
+@class "LDTSetoniaHTTPClient"
 
 @interface LDTSetoniaAPIClient : NSObject
 
+
++ (LDTSetoniaAPIClient *)sharedClient;
+
+
+- (id)initWithBaseURL:(NSURL *)url;
+
+/**
+ Get Movies from Setonia
+ 
+ @param query an `NSString` representing the query to use
+ */
++ (void)loadMoviesFromQuery:(NSString *)query withBlock:(void (^)(NSArray *groups, NSError *error))block;
+
+
+/**
+ Get Search from Setonia
+ 
+ @param query an `NSString` representing the query to use
+ */
++ (void)loadSearchFromQuery:(NSString *)query withBlock:(void (^)(NSArray *groups, NSError *error))block;
+
+
+/**
+ Get Sports from Setonia
+ 
+ @param query an `NSString` representing the query to use
+ */
++ (void)loadSportsFromQuery:(NSString *)query withBlock:(void (^)(NSArray *groups, NSError *error))block;
+
+
 @end
+
