@@ -36,7 +36,8 @@
     [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
     
     // Accept HTTP Header; see http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.1
-	[self setDefaultHeader:@"Accept" value:@"application/json"];
+	//[self setDefaultHeader:@"Accept" value:@"application/json"];
+    [self setDefaultHeader:@"Accept" value:@"application/html"];
     [self setDefaultHeader:@"Accept-Charset" value:@"utf-8"];
     return self;
 }
@@ -49,10 +50,11 @@
     
     // http://setonia.com/V1/movies.php?q={QUERY}&limit={number of results you want to see}
     
-    [[LDTSetoniaAPIClient sharedClient] getPath:@"/v1/movies.php"
+    [[LDTSetoniaAPIClient sharedClient] getPath:@"/V1/movies.php"
                                     parameters:params
                                        success:^(AFHTTPRequestOperation *operation, id JSON){
                                            NSArray *response = (NSArray *)JSON;
+                                           NSLog(@"response:%@", response);
                                            if (block) {
                                                block(response, nil);
                                            }
@@ -74,12 +76,15 @@
     
     NSDictionary *params = @{ @"q" : query };
     
+    // http://setonia.com/V1/search.php?q=Browns
+    
     // http://setonia.com/V1/search.php?q={QUERY}&limit={number of results you want to see}
     
-    [[LDTSetoniaAPIClient sharedClient] getPath:@"/v1/search.php"
+    [[LDTSetoniaAPIClient sharedClient] getPath:@"/V1/search.php"
                                     parameters:params
                                        success:^(AFHTTPRequestOperation *operation, id JSON){
                                            NSArray *response = (NSArray *)JSON;
+                                           NSLog(@"response:%@", response);
                                            if (block) {
                                                block(response, nil);
                                            }
@@ -103,10 +108,11 @@
     
     // http://setonia.com/V1/sports.php?q={QUERY}&limit={number of results you want to see} 
     
-    [[LDTSetoniaAPIClient sharedClient] getPath:@"/v1/sports.php"
+    [[LDTSetoniaAPIClient sharedClient] getPath:@"/V1/sports.php"
                                     parameters:params
                                        success:^(AFHTTPRequestOperation *operation, id JSON){
                                            NSArray *response = (NSArray *)JSON;
+                                           NSLog(@"response:%@", response);
                                            if (block) {
                                                block(response, nil);
                                            }

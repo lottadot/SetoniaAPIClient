@@ -7,8 +7,7 @@
 //
 
 #import "LDTSetoniaDataManager.h"
-// TODO (szatezalo, 2013-03-04) import LDTSetoniaAPIClient
-//#import <LDTSetoniaAPIClient/LDTSetoniaAPIClient.h>
+#import <LDTSetoniaAPIClient/LDTSetoniaAPIClient.h>
 #import "Product.h"
 
 @implementation LDTSetoniaDataManager
@@ -37,54 +36,54 @@
          withCompletion:(void (^)(NSArray *movies, NSError *error))completion
            withProgress:(void (^)(NSString *progressInfo))progress {
     
-//    LDTSetoniaDataManagerProgressBlock progress = ^(NSString *progressInfo){
-//        if (progress) {
-//            progress(progressInfo);
-//        }
-//    };
-    
-    LDTSetoniaDataManagerCompletionBlock completionBlock = ^(NSArray *results, NSError *error){
-        if (nil == error) {
-            if (nil != results) {
-                NSMutableArray *serviceProducts = [[NSMutableArray alloc] initWithCapacity:[results count]];
-                for (id obj in results) {
-                    NSDictionary *serviceDict = (NSDictionary *)obj;
-                    Product *product = [Product instanceFromDictionary:serviceDict];
-                    [serviceProducts addObject:product];
-                }
-                
-                if (completion) {
-                    completion(serviceProducts, nil);
-                }
+    [LDTSetoniaAPIClient loadMoviesFromQuery:query withBlock:^(NSArray *groups, NSError *error) {
+        if (nil != error) {
+            if (completion) {
+                completion(groups, nil);
             }
         } else {
             if (completion) {
                 completion(nil, error);
             }
         }
- 
-    };
-    
-    //[[LDTSetoniaAPIClient sharedClient] load
-    // TODO (szatezalo, 2013-03-04) moviesWithQuery
-    NSAssert(NO,@"Not Implemented");
-
+    }];
 }
 
 
 + (void)sportsWithQuery:(NSString *)query
          withCompletion:(void (^)(NSArray *movies, NSError *error))completion
            withProgress:(void (^)(NSString *progressInfo))progress {
-    // TODO (szatezalo, 2013-03-04) sportsWithQuery
-    NSAssert(NO,@"Not Implemented");
+
+    [LDTSetoniaAPIClient loadSportsFromQuery:query withBlock:^(NSArray *groups, NSError *error) {
+        if (nil != error) {
+            if (completion) {
+                completion(groups, nil);
+            }
+        } else {
+            if (completion) {
+                completion(nil, error);
+            }
+        }
+    }];
 }
 
 
 + (void)searchWithQuery:(NSString *)query
          withCompletion:(void (^)(NSArray *movies, NSError *error))completion
            withProgress:(void (^)(NSString *progressInfo))progress {
-    // TODO (szatezalo, 2013-03-04) searchWithQuery
-    NSAssert(NO,@"Not Implemented");
+
+    [LDTSetoniaAPIClient loadSearchFromQuery:query
+                                   withBlock:^(NSArray *groups, NSError *error) {
+        if (nil != error) {
+            if (completion) {
+                completion(groups, nil);
+            }
+        } else {
+            if (completion) {
+                completion(nil, error);
+            }
+        }
+    }];
 }
 
 

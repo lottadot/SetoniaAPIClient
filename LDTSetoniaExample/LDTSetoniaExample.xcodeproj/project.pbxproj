@@ -27,10 +27,9 @@
 		3430756D16E5A2F8009141C6 /* LDTResultsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430756B16E5A2F8009141C6 /* LDTResultsListViewController.m */; };
 		3430756E16E5A2F8009141C6 /* LDTResultsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3430756C16E5A2F8009141C6 /* LDTResultsListViewController.xib */; };
 		3430757316E5A3A5009141C6 /* LDTSetoniaDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430757216E5A3A5009141C6 /* LDTSetoniaDataManager.m */; };
-		3430757516E5A5BA009141C6 /* libLDTSetoniaAPIClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430757416E5A5BA009141C6 /* libLDTSetoniaAPIClient.a */; };
 		3430757C16E5A812009141C6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430757B16E5A812009141C6 /* MobileCoreServices.framework */; };
 		3430757E16E5A81E009141C6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430757D16E5A81E009141C6 /* SystemConfiguration.framework */; };
-		E8B8F86BAEF7408B92217404 /* libPods-LDTSetoniaExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B9E6BB39BD2499193F4590F /* libPods-LDTSetoniaExample.a */; };
+		3430759D16E6BDF7009141C6 /* libLDTSetoniaAPIClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430759C16E6BDF7009141C6 /* libLDTSetoniaAPIClient.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,11 +72,9 @@
 		3430756C16E5A2F8009141C6 /* LDTResultsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LDTResultsListViewController.xib; path = Classes/Controllers/LDTResultsListViewController.xib; sourceTree = "<group>"; };
 		3430757116E5A3A5009141C6 /* LDTSetoniaDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDTSetoniaDataManager.h; path = Classes/DataManager/LDTSetoniaDataManager.h; sourceTree = "<group>"; };
 		3430757216E5A3A5009141C6 /* LDTSetoniaDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDTSetoniaDataManager.m; path = Classes/DataManager/LDTSetoniaDataManager.m; sourceTree = "<group>"; };
-		3430757416E5A5BA009141C6 /* libLDTSetoniaAPIClient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLDTSetoniaAPIClient.a; path = "../LDTSetoniaAPIClient/build/Release-iphoneos/libLDTSetoniaAPIClient.a"; sourceTree = "<group>"; };
 		3430757B16E5A812009141C6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3430757D16E5A81E009141C6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		4B9E6BB39BD2499193F4590F /* libPods-LDTSetoniaExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LDTSetoniaExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D79A1C2F6E184CC3B4DF80E3 /* Pods-LDTSetoniaExample.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LDTSetoniaExample.xcconfig"; path = "../Pods/Pods-LDTSetoniaExample.xcconfig"; sourceTree = SOURCE_ROOT; };
+		3430759C16E6BDF7009141C6 /* libLDTSetoniaAPIClient.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libLDTSetoniaAPIClient.a; path = "../LDTSetoniaAPIClient/build/Release-iphoneos/libLDTSetoniaAPIClient.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,13 +82,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3430759D16E6BDF7009141C6 /* libLDTSetoniaAPIClient.a in Frameworks */,
 				3430757E16E5A81E009141C6 /* SystemConfiguration.framework in Frameworks */,
 				3430757C16E5A812009141C6 /* MobileCoreServices.framework in Frameworks */,
-				3430757516E5A5BA009141C6 /* libLDTSetoniaAPIClient.a in Frameworks */,
 				343074F316E5913A009141C6 /* UIKit.framework in Frameworks */,
 				343074F516E5913A009141C6 /* Foundation.framework in Frameworks */,
 				343074F716E5913A009141C6 /* CoreGraphics.framework in Frameworks */,
-				E8B8F86BAEF7408B92217404 /* libPods-LDTSetoniaExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +111,6 @@
 				3430751C16E5913A009141C6 /* LDTSetoniaExampleTests */,
 				343074F116E5913A009141C6 /* Frameworks */,
 				343074F016E5913A009141C6 /* Products */,
-				D79A1C2F6E184CC3B4DF80E3 /* Pods-LDTSetoniaExample.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,14 +126,13 @@
 		343074F116E5913A009141C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3430759C16E6BDF7009141C6 /* libLDTSetoniaAPIClient.a */,
 				3430757D16E5A81E009141C6 /* SystemConfiguration.framework */,
 				3430757B16E5A812009141C6 /* MobileCoreServices.framework */,
-				3430757416E5A5BA009141C6 /* libLDTSetoniaAPIClient.a */,
 				343074F216E5913A009141C6 /* UIKit.framework */,
 				343074F416E5913A009141C6 /* Foundation.framework */,
 				343074F616E5913A009141C6 /* CoreGraphics.framework */,
 				3430751616E5913A009141C6 /* SenTestingKit.framework */,
-				4B9E6BB39BD2499193F4590F /* libPods-LDTSetoniaExample.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -437,6 +431,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -461,6 +456,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -468,7 +464,6 @@
 		};
 		3430752816E5913A009141C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D79A1C2F6E184CC3B4DF80E3 /* Pods-LDTSetoniaExample.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LDTSetoniaExample/LDTSetoniaExample-Prefix.pch";
@@ -480,7 +475,6 @@
 		};
 		3430752916E5913A009141C6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D79A1C2F6E184CC3B4DF80E3 /* Pods-LDTSetoniaExample.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LDTSetoniaExample/LDTSetoniaExample-Prefix.pch";
