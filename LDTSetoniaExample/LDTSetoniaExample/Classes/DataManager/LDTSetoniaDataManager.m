@@ -36,12 +36,27 @@
          withCompletion:(void (^)(NSArray *movies, NSError *error))completion
            withProgress:(void (^)(NSString *progressInfo))progress {
     
-    [LDTSetoniaAPIClient loadMoviesFromQuery:query withBlock:^(NSArray *groups, NSError *error) {
-        if (nil != error) {
+    [LDTSetoniaAPIClient loadMoviesFromQuery:query withBlock:^(NSArray *serviceDictionaries,
+                                                               NSError *error) {
+        if (nil == error) {
+            NSLog(@"moviesWithQuery has:%@", serviceDictionaries);
+            NSAssert(nil != serviceDictionaries, @"serviceDictionaries is nil");
+            NSMutableArray *results = [[NSMutableArray alloc] init];
+            
+            if (nil != serviceDictionaries && [serviceDictionaries count]) {
+                for (id obj in serviceDictionaries) {
+                    NSDictionary *serviceDictionary = (NSDictionary *)obj;
+                    Product *p = [Product instanceFromDictionary:serviceDictionary];
+                    NSLog(@"Product:%@", [p description]);
+                    [results addObject:p];
+                }
+            }
+            NSLog(@"moviesWithQuery:results:%@", results);
             if (completion) {
-                completion(groups, nil);
+                completion(results, nil);
             }
         } else {
+            NSLog(@"moviesWithQuery:error:%@ error:%@", [error localizedDescription], error);
             if (completion) {
                 completion(nil, error);
             }
@@ -54,12 +69,26 @@
          withCompletion:(void (^)(NSArray *movies, NSError *error))completion
            withProgress:(void (^)(NSString *progressInfo))progress {
 
-    [LDTSetoniaAPIClient loadSportsFromQuery:query withBlock:^(NSArray *groups, NSError *error) {
-        if (nil != error) {
+    [LDTSetoniaAPIClient loadSportsFromQuery:query withBlock:^(NSArray *serviceDictionaries, NSError *error) {
+        if (nil == error) {
+            NSLog(@"sportsWithQuery has:%@", serviceDictionaries);
+            NSAssert(nil != serviceDictionaries, @"serviceDictionaries is nil");
+            NSMutableArray *results = [[NSMutableArray alloc] init];
+            
+            if (nil != serviceDictionaries && [serviceDictionaries count]) {
+                for (id obj in serviceDictionaries) {
+                    NSDictionary *serviceDictionary = (NSDictionary *)obj;
+                    Product *p = [Product instanceFromDictionary:serviceDictionary];
+                    NSLog(@"Product:%@", [p description]);
+                    [results addObject:p];
+                }
+            }
+            NSLog(@"sportsWithQuery:results:%@", results);
             if (completion) {
-                completion(groups, nil);
+                completion(results, nil);
             }
         } else {
+            NSLog(@"sportsWithQuery:error:%@ error:%@", [error localizedDescription], error);
             if (completion) {
                 completion(nil, error);
             }
@@ -72,13 +101,26 @@
          withCompletion:(void (^)(NSArray *movies, NSError *error))completion
            withProgress:(void (^)(NSString *progressInfo))progress {
 
-    [LDTSetoniaAPIClient loadSearchFromQuery:query
-                                   withBlock:^(NSArray *groups, NSError *error) {
-        if (nil != error) {
+    [LDTSetoniaAPIClient loadSearchFromQuery:query withBlock:^(NSArray *serviceDictionaries, NSError *error) {
+        if (nil == error) {
+            NSLog(@"searchWithQuery has:%@", serviceDictionaries);
+            NSAssert(nil != serviceDictionaries, @"serviceDictionaries is nil");
+            NSMutableArray *results = [[NSMutableArray alloc] init];
+            
+            if (nil != serviceDictionaries && [serviceDictionaries count]) {
+                for (id obj in serviceDictionaries) {
+                    NSDictionary *serviceDictionary = (NSDictionary *)obj;
+                    Product *p = [Product instanceFromDictionary:serviceDictionary];
+                    NSLog(@"Product:%@", [p description]);
+                    [results addObject:p];
+                }
+            }
+            NSLog(@"searchWithQuery:results:%@", results);
             if (completion) {
-                completion(groups, nil);
+                completion(results, nil);
             }
         } else {
+            NSLog(@"searchWithQuery:error:%@ error:%@", [error localizedDescription], error);
             if (completion) {
                 completion(nil, error);
             }

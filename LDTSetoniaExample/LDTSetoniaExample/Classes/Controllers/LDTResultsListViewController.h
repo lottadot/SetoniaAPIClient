@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class Product, LDTSetoniaDataManager;
+
 @interface LDTResultsListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *results;
 
+- (id)initWithResults:(NSArray *)results;
 @end

@@ -8,6 +8,9 @@
 
 #import "LDTSetoniaAPIClient.h"
 #import "LDTSetoniaHTTPClient.h"
+#import "AFJSONRequestOperation.h"
+#import "NSMutableURLRequest+SetoniaUtil.h"
+#import "LDTSetoniaJSONRequestOperation.h"
 
 #define kSetoniaAPIURL @"http://setonia.com/V1/"
 
@@ -47,21 +50,34 @@
     NSParameterAssert(query);
     
     NSDictionary *params = @{ @"q" : query };
-    
     // http://setonia.com/V1/movies.php?q={QUERY}&limit={number of results you want to see}
     
+    [[LDTSetoniaAPIClient sharedClient] setParameterEncoding:AFJSONParameterEncoding];
     [[LDTSetoniaAPIClient sharedClient] getPath:@"/V1/movies.php"
                                     parameters:params
                                        success:^(AFHTTPRequestOperation *operation, id JSON){
-                                           NSArray *response = (NSArray *)JSON;
-                                           NSLog(@"response:%@", response);
+                                           
+                                           NSLog(@"JSON:%@", JSON);
+                                           NSLog(@"JSON class:%@", [JSON class]);
+                                           
+                                           NSArray *results = nil;
+                                           NSError *jsonConversionError = nil;
+                                           
+                                           if (![JSON isKindOfClass:[NSArray class]]) {
+                                               results = [NSJSONSerialization JSONObjectWithData:JSON options:0 error:&jsonConversionError];
+                                           } else {
+                                               results = (NSArray *)JSON;
+                                           }
+
+                                           NSLog(@"results class:%@", [results class]);
+                                           NSLog(@"fromQuery:results:%@", results);
                                            if (block) {
-                                               block(response, nil);
+                                               block(results, jsonConversionError);
                                            }
                                            
                                        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                            NSURL *url = [[operation request] URL];
-                                           NSLog(@"loadMoviesFromQuery:%@ url:%@",
+                                           NSLog(@"fromQuery:error:%@ url:%@",
                                                  [error localizedDescription],
                                                  [url absoluteString]);
                                            if (block) {
@@ -82,22 +98,35 @@
     
     [[LDTSetoniaAPIClient sharedClient] getPath:@"/V1/search.php"
                                     parameters:params
-                                       success:^(AFHTTPRequestOperation *operation, id JSON){
-                                           NSArray *response = (NSArray *)JSON;
-                                           NSLog(@"response:%@", response);
-                                           if (block) {
-                                               block(response, nil);
-                                           }
-                                           
-                                       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                           NSURL *url = [[operation request] URL];
-                                           NSLog(@"loadSearchFromQuery:%@ url:%@",
-                                                 [error localizedDescription],
-                                                 [url absoluteString]);
-                                           if (block) {
-                                               block([NSArray array], error);
-                                           }
-                                       }];
+                                        success:^(AFHTTPRequestOperation *operation, id JSON){
+                                            
+                                            NSLog(@"JSON:%@", JSON);
+                                            NSLog(@"JSON class:%@", [JSON class]);
+                                            
+                                            NSArray *results = nil;
+                                            NSError *jsonConversionError = nil;
+                                            
+                                            if (![JSON isKindOfClass:[NSArray class]]) {
+                                                results = [NSJSONSerialization JSONObjectWithData:JSON options:0 error:&jsonConversionError];
+                                            } else {
+                                                results = (NSArray *)JSON;
+                                            }
+                                            
+                                            NSLog(@"results class:%@", [results class]);
+                                            NSLog(@"fromQuery:results:%@", results);
+                                            if (block) {
+                                                block(results, jsonConversionError);
+                                            }
+                                            
+                                        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                            NSURL *url = [[operation request] URL];
+                                            NSLog(@"fromQuery:error:%@ url:%@",
+                                                  [error localizedDescription],
+                                                  [url absoluteString]);
+                                            if (block) {
+                                                block([NSArray array], error);
+                                            }
+                                        }];
 }
 
 
@@ -110,22 +139,54 @@
     
     [[LDTSetoniaAPIClient sharedClient] getPath:@"/V1/sports.php"
                                     parameters:params
-                                       success:^(AFHTTPRequestOperation *operation, id JSON){
-                                           NSArray *response = (NSArray *)JSON;
-                                           NSLog(@"response:%@", response);
-                                           if (block) {
-                                               block(response, nil);
-                                           }
-                                           
-                                       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                           NSURL *url = [[operation request] URL];
-                                           NSLog(@"loadSportsFromQuery:%@ url:%@",
-                                                 [error localizedDescription],
-                                                 [url absoluteString]);
-                                           if (block) {
-                                               block([NSArray array], error);
-                                           }
-                                       }];
+                                        success:^(AFHTTPRequestOperation *operation, id JSON){
+                                            
+                                            NSLog(@"JSON:%@", JSON);
+                                            NSLog(@"JSON class:%@", [JSON class]);
+                                            
+                                            NSArray *results = nil;
+                                            NSError *jsonConversionError = nil;
+                                            
+                                            if (![JSON isKindOfClass:[NSArray class]]) {
+                                                results = [NSJSONSerialization JSONObjectWithData:JSON options:0 error:&jsonConversionError];
+                                            } else {
+                                                results = (NSArray *)JSON;
+                                            }
+                                            
+                                            NSLog(@"results class:%@", [results class]);
+                                            NSLog(@"fromQuery:results:%@", results);
+                                            if (block) {
+                                                block(results, jsonConversionError);
+                                            }
+                                            
+                                        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                            NSURL *url = [[operation request] URL];
+                                            NSLog(@"fromQuery:error:%@ url:%@",
+                                                  [error localizedDescription],
+                                                  [url absoluteString]);
+                                            if (block) {
+                                                block([NSArray array], error);
+                                            }
+                                        }];
 }
+
+
+#pragma mark - Util
+
+
+- (NSMutableURLRequest *)requestWithMethod:(NSString *)method
+                                      path:(NSString *)path
+                                parameters:(NSDictionary *)parameters {
+    NSParameterAssert(method);
+    NSParameterAssert(path);
+        
+    [super setParameterEncoding:AFJSONParameterEncoding];
+    NSMutableURLRequest *request = [super requestWithMethod:method path:path parameters:parameters];
+    [request LDTSetoniaPrepForIrregularHTMLReturnType];
+    NSLog(@"%@", [request allHTTPHeaderFields]);
+
+	return request;
+}
+
 
 @end

@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [_searchTextField setText:@"Browns"];
+    NSAssert(nil != self.navigationController, @"self.navigationController nil");
 }
 
 
@@ -34,16 +35,21 @@
 
     [LDTSetoniaDataManager searchWithQuery:[_searchTextField text]
                             withCompletion:^(NSArray *searchResults, NSError *error) {
-                                NSLog(@"searchResults:%@ error:%@", searchResults, [error localizedDescription]);
-        if (nil != error) {
-            
-            LDTResultsListViewController *resultsVC = [[LDTResultsListViewController alloc] init];
-            [resultsVC setResults:searchResults];
-            [resultsVC setTitle:@"Search Results"];
-            [self.navigationController pushViewController:resultsVC animated:YES];
-        } else {
-            // TODO Error
-        }
+                                
+                                if (nil == error) {
+                                    bool haveResults = (nil != searchResults && [searchResults count]);
+                                    if (haveResults) {
+                                        NSLog(@"searchResults:%@", searchResults);
+                                        LDTResultsListViewController *resultsVC = [[LDTResultsListViewController alloc] init];
+                                        [resultsVC setResults:searchResults];
+                                        [resultsVC setTitle:@"Search Results"];
+                                        [self.navigationController pushViewController:resultsVC animated:YES];
+                                    } else {
+                                        NSLog(@"NO RESULTS FOUND");
+                                    }
+                                } else {
+                                    NSLog(@"searchWithQuery:Erro:%@", [error localizedDescription]);
+                                }
         
     } withProgress:^(NSString *progressInfo) {
         // TODO
@@ -55,15 +61,20 @@
 
     [LDTSetoniaDataManager moviesWithQuery:[_searchTextField text]
                             withCompletion:^(NSArray *searchResults, NSError *error) {
-                                NSLog(@"searchResults:%@ error:%@", searchResults, [error localizedDescription]);
-                                if (nil != error) {
-                                    
-                                    LDTResultsListViewController *resultsVC = [[LDTResultsListViewController alloc] init];
-                                    [resultsVC setResults:searchResults];
-                                    [resultsVC setTitle:@"Movie Results"];
-                                    [self.navigationController pushViewController:resultsVC animated:YES];
+
+                                if (nil == error) {
+                                    bool haveResults = (nil != searchResults && [searchResults count]);
+                                    if (haveResults) {
+                                        NSLog(@"searchResults:%@", searchResults);
+                                        LDTResultsListViewController *resultsVC = [[LDTResultsListViewController alloc] init];
+                                        [resultsVC setResults:searchResults];
+                                        [resultsVC setTitle:@"Search Results"];
+                                        [self.navigationController pushViewController:resultsVC animated:YES];
+                                    } else {
+                                        NSLog(@"NO RESULTS FOUND");
+                                    }
                                 } else {
-                                    // TODO Error
+                                    NSLog(@"searchWithQuery:Erro:%@", [error localizedDescription]);
                                 }
                                 
                             } withProgress:^(NSString *progressInfo) {
@@ -77,17 +88,21 @@
 
     [LDTSetoniaDataManager sportsWithQuery:[_searchTextField text]
                             withCompletion:^(NSArray *searchResults, NSError *error) {
-                                NSLog(@"searchResults:%@ error:%@", searchResults, [error localizedDescription]);
-        if (nil != error) {
-            
-            LDTResultsListViewController *resultsVC = [[LDTResultsListViewController alloc] init];
-            [resultsVC setResults:searchResults];
-            [resultsVC setTitle:@"Sports Results"];
-            [self.navigationController pushViewController:resultsVC animated:YES];
-            
-        } else {
-            // TODO Error
-        }
+
+                                if (nil == error) {
+                                    bool haveResults = (nil != searchResults && [searchResults count]);
+                                    if (haveResults) {
+                                        NSLog(@"searchResults:%@", searchResults);
+                                        LDTResultsListViewController *resultsVC = [[LDTResultsListViewController alloc] init];
+                                        [resultsVC setResults:searchResults];
+                                        [resultsVC setTitle:@"Search Results"];
+                                        [self.navigationController pushViewController:resultsVC animated:YES];
+                                    } else {
+                                        NSLog(@"NO RESULTS FOUND");
+                                    }
+                                } else {
+                                    NSLog(@"searchWithQuery:Erro:%@", [error localizedDescription]);
+                                }
         
     } withProgress:^(NSString *progressInfo) {
         //

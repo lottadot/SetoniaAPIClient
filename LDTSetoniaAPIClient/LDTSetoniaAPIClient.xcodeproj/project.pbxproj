@@ -30,6 +30,9 @@
 		3430759F16E6BE39009141C6 /* AFHTTPRequestOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3430758216E6BD7E009141C6 /* AFHTTPRequestOperation.h */; };
 		343075A016E6BE46009141C6 /* AFURLConnectionOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3430758D16E6BD7E009141C6 /* AFURLConnectionOperation.h */; };
 		343075A116E6C450009141C6 /* AFHTTPClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3430758016E6BD7E009141C6 /* AFHTTPClient.h */; };
+		3441A24916EBADAA002BA987 /* AFHTTPClient+SetoniaUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3441A24516EBADAA002BA987 /* AFHTTPClient+SetoniaUtil.m */; };
+		3441A24A16EBADAA002BA987 /* NSMutableURLRequest+SetoniaUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3441A24816EBADAA002BA987 /* NSMutableURLRequest+SetoniaUtil.m */; };
+		3441A24D16EBAFD8002BA987 /* LDTSetoniaJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3441A24C16EBAFD8002BA987 /* LDTSetoniaJSONRequestOperation.m */; };
 		349744D016EB6FDC0032DAC6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430757616E5A70F009141C6 /* SystemConfiguration.framework */; };
 		349744D116EB6FE00032DAC6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430757816E5A71B009141C6 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
@@ -97,6 +100,12 @@
 		3430759016E6BD7E009141C6 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFXMLRequestOperation.m; path = ../Libraries/AFNetworking/AFNetworking/AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		3430759116E6BD7E009141C6 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "../Libraries/AFNetworking/AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		3430759216E6BD7E009141C6 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "../Libraries/AFNetworking/AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		3441A24416EBADAA002BA987 /* AFHTTPClient+SetoniaUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AFHTTPClient+SetoniaUtil.h"; path = "Classes/AFHTTPClient+SetoniaUtil.h"; sourceTree = "<group>"; };
+		3441A24516EBADAA002BA987 /* AFHTTPClient+SetoniaUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AFHTTPClient+SetoniaUtil.m"; path = "Classes/AFHTTPClient+SetoniaUtil.m"; sourceTree = "<group>"; };
+		3441A24716EBADAA002BA987 /* NSMutableURLRequest+SetoniaUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableURLRequest+SetoniaUtil.h"; path = "Classes/NSMutableURLRequest+SetoniaUtil.h"; sourceTree = "<group>"; };
+		3441A24816EBADAA002BA987 /* NSMutableURLRequest+SetoniaUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableURLRequest+SetoniaUtil.m"; path = "Classes/NSMutableURLRequest+SetoniaUtil.m"; sourceTree = "<group>"; };
+		3441A24B16EBAFD8002BA987 /* LDTSetoniaJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDTSetoniaJSONRequestOperation.h; path = Classes/LDTSetoniaJSONRequestOperation.h; sourceTree = "<group>"; };
+		3441A24C16EBAFD8002BA987 /* LDTSetoniaJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDTSetoniaJSONRequestOperation.m; path = Classes/LDTSetoniaJSONRequestOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +170,7 @@
 				3430754016E5922E009141C6 /* LDTSetoniaAPIClient.m */,
 				3430756116E59C33009141C6 /* LDTSetoniaHTTPClient.h */,
 				3430756216E59C33009141C6 /* LDTSetoniaHTTPClient.m */,
+				3441A24316EBADA0002BA987 /* Util */,
 				3430753C16E5922E009141C6 /* Supporting Files */,
 			);
 			path = LDTSetoniaAPIClient;
@@ -217,6 +227,19 @@
 				3430759216E6BD7E009141C6 /* UIImageView+AFNetworking.m */,
 			);
 			name = AFNetworking;
+			sourceTree = "<group>";
+		};
+		3441A24316EBADA0002BA987 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				3441A24416EBADAA002BA987 /* AFHTTPClient+SetoniaUtil.h */,
+				3441A24516EBADAA002BA987 /* AFHTTPClient+SetoniaUtil.m */,
+				3441A24B16EBAFD8002BA987 /* LDTSetoniaJSONRequestOperation.h */,
+				3441A24C16EBAFD8002BA987 /* LDTSetoniaJSONRequestOperation.m */,
+				3441A24716EBADAA002BA987 /* NSMutableURLRequest+SetoniaUtil.h */,
+				3441A24816EBADAA002BA987 /* NSMutableURLRequest+SetoniaUtil.m */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +352,9 @@
 				3430759916E6BD7E009141C6 /* AFURLConnectionOperation.m in Sources */,
 				3430759A16E6BD7E009141C6 /* AFXMLRequestOperation.m in Sources */,
 				3430759B16E6BD7E009141C6 /* UIImageView+AFNetworking.m in Sources */,
+				3441A24916EBADAA002BA987 /* AFHTTPClient+SetoniaUtil.m in Sources */,
+				3441A24A16EBADAA002BA987 /* NSMutableURLRequest+SetoniaUtil.m in Sources */,
+				3441A24D16EBAFD8002BA987 /* LDTSetoniaJSONRequestOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
