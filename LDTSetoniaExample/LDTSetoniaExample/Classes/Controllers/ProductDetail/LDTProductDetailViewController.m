@@ -10,6 +10,7 @@
 #import "Product.h"
 #import "LDTSetoniaDataManager.h"
 #import "LDTWebViewController.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface LDTProductDetailViewController ()
 
@@ -38,6 +39,11 @@
 #pragma mark - View Lifecycle
 
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self updateViewForProduct:_product];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 }
@@ -53,11 +59,14 @@
 - (void)updateViewForProduct:(Product *)product {
     if (product) {
         [_productTitleLabel setText:[_product title]];
+        [_productPriceLabel setText:[_product price]];
         [_productFeaturesLabel setText:[_product features]];
-        NSLog(@"product:%@", product);
-//        _productImageView = [[LDTSetoniaDataManager sharedClient] imageViewForProduct:_product];
-        UIImageView *iv = [[LDTSetoniaDataManager sharedClient] imageViewForProduct:_product];
-        _productImageView.image = iv.image;
+////        _productImageView = [[LDTSetoniaDataManager sharedClient] imageViewForProduct:_product];
+//        UIImageView *iv = [[LDTSetoniaDataManager sharedClient] imageViewForProduct:_product];
+//        _productImageView.image = iv.image;
+        NSURL *url = [NSURL URLWithString:[product photoURL]];
+        [_productImageView setImageWithURL:url
+                                       placeholderImage:[UIImage imageNamed:@"profile-image-placeholder"]];
     }
 }
 

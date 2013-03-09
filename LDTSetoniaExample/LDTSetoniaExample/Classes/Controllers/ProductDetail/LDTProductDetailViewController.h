@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *productTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *productFeaturesLabel;
 @property (weak, nonatomic) IBOutlet UIButton *viewOnWebButton;
+@property (weak, nonatomic) IBOutlet UILabel *productPriceLabel;
 
 - (IBAction)viewOnWebButtonTapped:(id)sender;
 

@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setTitle:@"Search"];
+    [self setTitle:NSLocalizedString(@"Search", @"Search")];
     [_searchTextField setText:@"Browns"];
     NSAssert(nil != self.navigationController, @"self.navigationController nil");
 }
@@ -37,80 +37,66 @@
 
 - (IBAction)generalSearchButtonTapped:(id)sender {
     [self searchTextFieldShouldDisappear];
-    [LDTSetoniaDataManager searchWithQuery:[_searchTextField text]
-                            withCompletion:^(NSArray *searchResults, NSError *error) {
-                                
-                                if (nil == error) {
-                                    bool haveResults = (nil != searchResults && [searchResults count]);
-                                    if (haveResults) {
-                                        NSLog(@"searchResults:%@", searchResults);
-                                        LDTResultsListViewController *resultsVC = [[LDTResultsListViewController alloc] init];
-                                        [resultsVC setResults:searchResults];
-                                        [resultsVC setTitle:@"Search Results"];
-                                        [self.navigationController pushViewController:resultsVC animated:YES];
-                                    } else {
-                                        NSLog(@"NO RESULTS FOUND");
-                                    }
-                                } else {
-                                    NSLog(@"searchWithQuery:Erro:%@", [error localizedDescription]);
-                                }
+    [LDTSetoniaDataManager searchWithQuery:[_searchTextField text] withCompletion:^(NSArray *searchResults, NSError *error) {
+
+        if (nil == error) {
+            [self processResults:searchResults];
+        } else {
+            // TODO (szatezalo, 2013-03-09) UIAlert for error
+            NSLog(@"searchWithQuery:Erro:%@", [error localizedDescription]);
+        }
         
     } withProgress:^(NSString *progressInfo) {
-        // TODO
+        // TODO (szatezalo, 2013-03-09) Something GUI for progress here
     }];
 }
 
 
 - (IBAction)moviesSearchButtonTapped:(id)sender {
     [self searchTextFieldShouldDisappear];
-    [LDTSetoniaDataManager moviesWithQuery:[_searchTextField text]
-                            withCompletion:^(NSArray *searchResults, NSError *error) {
+    [LDTSetoniaDataManager moviesWithQuery:[_searchTextField text] withCompletion:^(NSArray *searchResults, NSError *error) {
 
-                                if (nil == error) {
-                                    bool haveResults = (nil != searchResults && [searchResults count]);
-                                    if (haveResults) {
-                                        NSLog(@"searchResults:%@", searchResults);
-                                        LDTResultsListViewController *resultsVC = [[LDTResultsListViewController alloc] init];
-                                        [resultsVC setResults:searchResults];
-                                        [resultsVC setTitle:@"Search Results"];
-                                        [self.navigationController pushViewController:resultsVC animated:YES];
-                                    } else {
-                                        NSLog(@"NO RESULTS FOUND");
-                                    }
-                                } else {
-                                    NSLog(@"searchWithQuery:Erro:%@", [error localizedDescription]);
-                                }
-                                
-                            } withProgress:^(NSString *progressInfo) {
-                                // TODO
-                            }];
-    
+        if (nil == error) {
+            [self processResults:searchResults];
+        } else {
+            // TODO (szatezalo, 2013-03-09) UIAlert for error
+            NSLog(@"searchWithQuery:Erro:%@", [error localizedDescription]);
+        }
+        
+    } withProgress:^(NSString *progressInfo) {
+        // TODO (szatezalo, 2013-03-09) Something GUI for progress here
+    }];
 }
 
 
 - (IBAction)sportsSearchButtonTapped:(id)sender {
     [self searchTextFieldShouldDisappear];
-    [LDTSetoniaDataManager sportsWithQuery:[_searchTextField text]
-                            withCompletion:^(NSArray *searchResults, NSError *error) {
+    [LDTSetoniaDataManager sportsWithQuery:[_searchTextField text] withCompletion:^(NSArray *searchResults, NSError *error) {
 
-                                if (nil == error) {
-                                    bool haveResults = (nil != searchResults && [searchResults count]);
-                                    if (haveResults) {
-                                        NSLog(@"searchResults:%@", searchResults);
-                                        LDTResultsListViewController *resultsVC = [[LDTResultsListViewController alloc] init];
-                                        [resultsVC setResults:searchResults];
-                                        [resultsVC setTitle:@"Search Results"];
-                                        [self.navigationController pushViewController:resultsVC animated:YES];
-                                    } else {
-                                        NSLog(@"NO RESULTS FOUND");
-                                    }
-                                } else {
-                                    NSLog(@"searchWithQuery:Erro:%@", [error localizedDescription]);
-                                }
+        if (nil == error) {
+            [self processResults:searchResults];
+        } else {
+            // TODO (szatezalo, 2013-03-09) UIAlert for error
+            NSLog(@"searchWithQuery:Erro:%@", [error localizedDescription]);
+        }
         
     } withProgress:^(NSString *progressInfo) {
-        //
+        // TODO (szatezalo, 2013-03-09) Something GUI for progress here
     }];
+}
+
+- (void)processResults:(NSArray *)searchResults {
+    
+    bool haveResults = (nil != searchResults && [searchResults count]);
+    if (haveResults) {
+        LDTResultsListViewController *resultsVC = [[LDTResultsListViewController alloc] init];
+        [resultsVC setResults:searchResults];
+        [resultsVC setTitle:@"Search Results"];
+        [self.navigationController pushViewController:resultsVC animated:YES];
+    } else {
+        // TODO (szatezalo, 2013-03-09) UIAlert for no results found.
+        NSLog(@"NO RESULTS FOUND");
+    }
 }
 
 
