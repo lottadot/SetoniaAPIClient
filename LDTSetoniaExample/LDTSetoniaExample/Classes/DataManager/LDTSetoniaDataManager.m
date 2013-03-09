@@ -9,6 +9,7 @@
 #import "LDTSetoniaDataManager.h"
 #import <LDTSetoniaAPIClient/LDTSetoniaAPIClient.h>
 #import "Product.h"
+//#import "UIImageView+AFNetworking.h"
 
 @implementation LDTSetoniaDataManager
 
@@ -126,6 +127,17 @@
             }
         }
     }];
+}
+
+
+- (UIImageView *)imageViewForProduct:(Product *)product {
+    NSParameterAssert(product);
+    if ([product photoURL]) {
+        NSURL *url = [NSURL URLWithString:[product photoURL]];
+        return [[LDTSetoniaAPIClient sharedClient] imageViewWithURL:url];
+    } else {
+        return nil;
+    }
 }
 
 

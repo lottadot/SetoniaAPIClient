@@ -34,4 +34,7 @@ typedef void (^LDTSetoniaDataManagerCompletionBlock) (NSArray *results, NSError 
          withCompletion:(void (^)(NSArray *movies, NSError *error))completion
            withProgress:(void (^)(NSString *progressInfo))progress;
 
+- (UIImageView *)imageViewForProduct:(Product *)product;
+
+
 @end

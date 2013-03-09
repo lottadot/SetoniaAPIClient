@@ -11,6 +11,7 @@
 #import "AFJSONRequestOperation.h"
 #import "NSMutableURLRequest+SetoniaUtil.h"
 #import "LDTSetoniaJSONRequestOperation.h"
+#import "UIImageView+AFNetworking.h"
 
 #define kSetoniaAPIURL @"http://setonia.com/V1/"
 
@@ -186,6 +187,19 @@
     NSLog(@"%@", [request allHTTPHeaderFields]);
 
 	return request;
+}
+
+
+#pragma mark - Product Image
+
+
+- (UIImageView *)imageViewWithURL:(NSURL *)url {
+    NSParameterAssert(url);
+    UIImageView *iv = [[UIImageView alloc] init];
+    if (url) {
+        [iv setImageWithURL:url];
+    }
+    return iv;
 }
 
 

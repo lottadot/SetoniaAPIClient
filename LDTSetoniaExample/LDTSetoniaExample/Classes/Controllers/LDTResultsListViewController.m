@@ -9,6 +9,7 @@
 #import "LDTResultsListViewController.h"
 #import "Product.h"
 #import "LDTSetoniaDataManager.h"
+#import "LDTProductDetailViewController.h"
 
 @interface LDTResultsListViewController ()
 
@@ -71,6 +72,17 @@
     [self configureCell:cell forRowAtIndexPath:indexPath];
     return cell;
 }
+
+
+#pragma mark - UITableView Delegate protocol
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Product *product = (Product *)[_results objectAtIndex:indexPath.row];
+    LDTProductDetailViewController *detailVC = [[LDTProductDetailViewController alloc] initWithProduct:product];
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
+
 
 - (void)configureCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     Product *product = (Product *)[_results objectAtIndex:indexPath.row];

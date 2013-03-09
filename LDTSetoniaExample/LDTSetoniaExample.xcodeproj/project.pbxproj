@@ -28,6 +28,8 @@
 		3430756E16E5A2F8009141C6 /* LDTResultsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3430756C16E5A2F8009141C6 /* LDTResultsListViewController.xib */; };
 		3430757316E5A3A5009141C6 /* LDTSetoniaDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430757216E5A3A5009141C6 /* LDTSetoniaDataManager.m */; };
 		3430759D16E6BDF7009141C6 /* libLDTSetoniaAPIClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430759C16E6BDF7009141C6 /* libLDTSetoniaAPIClient.a */; };
+		3441A25116EBBF0A002BA987 /* LDTProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3441A24F16EBBF0A002BA987 /* LDTProductDetailViewController.m */; };
+		3441A25216EBBF0A002BA987 /* LDTProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3441A25016EBBF0A002BA987 /* LDTProductDetailViewController.xib */; };
 		349744D216EB6FED0032DAC6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430757D16E5A81E009141C6 /* SystemConfiguration.framework */; };
 		349744D316EB6FF20032DAC6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430757B16E5A812009141C6 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +77,9 @@
 		3430757B16E5A812009141C6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3430757D16E5A81E009141C6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3430759C16E6BDF7009141C6 /* libLDTSetoniaAPIClient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLDTSetoniaAPIClient.a; path = "../LDTSetoniaAPIClient/build/Release-iphoneos/libLDTSetoniaAPIClient.a"; sourceTree = "<group>"; };
+		3441A24E16EBBF0A002BA987 /* LDTProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDTProductDetailViewController.h; path = Classes/Controllers/ProductDetail/LDTProductDetailViewController.h; sourceTree = "<group>"; };
+		3441A24F16EBBF0A002BA987 /* LDTProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDTProductDetailViewController.m; path = Classes/Controllers/ProductDetail/LDTProductDetailViewController.m; sourceTree = "<group>"; };
+		3441A25016EBBF0A002BA987 /* LDTProductDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LDTProductDetailViewController.xib; path = Classes/Controllers/ProductDetail/LDTProductDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +214,9 @@
 				3430756A16E5A2F8009141C6 /* LDTResultsListViewController.h */,
 				3430756B16E5A2F8009141C6 /* LDTResultsListViewController.m */,
 				3430756C16E5A2F8009141C6 /* LDTResultsListViewController.xib */,
+				3441A24E16EBBF0A002BA987 /* LDTProductDetailViewController.h */,
+				3441A24F16EBBF0A002BA987 /* LDTProductDetailViewController.m */,
+				3441A25016EBBF0A002BA987 /* LDTProductDetailViewController.xib */,
 			);
 			name = Results;
 			sourceTree = "<group>";
@@ -300,6 +308,7 @@
 				3430750916E5913A009141C6 /* Default-568h@2x.png in Resources */,
 				3430750F16E5913A009141C6 /* LDTViewController.xib in Resources */,
 				3430756E16E5A2F8009141C6 /* LDTResultsListViewController.xib in Resources */,
+				3441A25216EBBF0A002BA987 /* LDTProductDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +349,7 @@
 				3430756816E5A2AC009141C6 /* Product.m in Sources */,
 				3430756D16E5A2F8009141C6 /* LDTResultsListViewController.m in Sources */,
 				3430757316E5A3A5009141C6 /* LDTSetoniaDataManager.m in Sources */,
+				3441A25116EBBF0A002BA987 /* LDTProductDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

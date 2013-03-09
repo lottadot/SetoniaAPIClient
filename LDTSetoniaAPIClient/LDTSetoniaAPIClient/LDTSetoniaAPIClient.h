@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AFJSONRequestOperation.h"
 #import "LDTSetoniaHTTPClient.h"
+#import <UIKit/UIKit.h>
 
 @class LDTSetoniaHTTPClient;
 
@@ -42,6 +43,9 @@
  @param query an `NSString` representing the query to use
  */
 + (void)loadSportsFromQuery:(NSString *)query withBlock:(void (^)(NSArray *groups, NSError *error))block;
+
+
+- (UIImageView *)imageViewWithURL:(NSURL *)url;
 
 
 @end
