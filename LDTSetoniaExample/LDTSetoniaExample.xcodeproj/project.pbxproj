@@ -27,9 +27,9 @@
 		3430756D16E5A2F8009141C6 /* LDTResultsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430756B16E5A2F8009141C6 /* LDTResultsListViewController.m */; };
 		3430756E16E5A2F8009141C6 /* LDTResultsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3430756C16E5A2F8009141C6 /* LDTResultsListViewController.xib */; };
 		3430757316E5A3A5009141C6 /* LDTSetoniaDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430757216E5A3A5009141C6 /* LDTSetoniaDataManager.m */; };
-		3430757C16E5A812009141C6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430757B16E5A812009141C6 /* MobileCoreServices.framework */; };
-		3430757E16E5A81E009141C6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430757D16E5A81E009141C6 /* SystemConfiguration.framework */; };
 		3430759D16E6BDF7009141C6 /* libLDTSetoniaAPIClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430759C16E6BDF7009141C6 /* libLDTSetoniaAPIClient.a */; };
+		349744D216EB6FED0032DAC6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430757D16E5A81E009141C6 /* SystemConfiguration.framework */; };
+		349744D316EB6FF20032DAC6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430757B16E5A812009141C6 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +74,7 @@
 		3430757216E5A3A5009141C6 /* LDTSetoniaDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDTSetoniaDataManager.m; path = Classes/DataManager/LDTSetoniaDataManager.m; sourceTree = "<group>"; };
 		3430757B16E5A812009141C6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3430757D16E5A81E009141C6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		3430759C16E6BDF7009141C6 /* libLDTSetoniaAPIClient.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libLDTSetoniaAPIClient.a; path = "../LDTSetoniaAPIClient/build/Release-iphoneos/libLDTSetoniaAPIClient.a"; sourceTree = "<group>"; };
+		3430759C16E6BDF7009141C6 /* libLDTSetoniaAPIClient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libLDTSetoniaAPIClient.a; path = "../LDTSetoniaAPIClient/build/Release-iphoneos/libLDTSetoniaAPIClient.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +82,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				349744D316EB6FF20032DAC6 /* MobileCoreServices.framework in Frameworks */,
+				349744D216EB6FED0032DAC6 /* SystemConfiguration.framework in Frameworks */,
 				3430759D16E6BDF7009141C6 /* libLDTSetoniaAPIClient.a in Frameworks */,
-				3430757E16E5A81E009141C6 /* SystemConfiguration.framework in Frameworks */,
-				3430757C16E5A812009141C6 /* MobileCoreServices.framework in Frameworks */,
 				343074F316E5913A009141C6 /* UIKit.framework in Frameworks */,
 				343074F516E5913A009141C6 /* Foundation.framework in Frameworks */,
 				343074F716E5913A009141C6 /* CoreGraphics.framework in Frameworks */,
@@ -232,7 +232,6 @@
 				343074EB16E5913A009141C6 /* Sources */,
 				343074EC16E5913A009141C6 /* Frameworks */,
 				343074ED16E5913A009141C6 /* Resources */,
-				A815C54BE04F4811B9E9C945 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -327,20 +326,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-		A815C54BE04F4811B9E9C945 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Pods-LDTSetoniaExample-resources.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

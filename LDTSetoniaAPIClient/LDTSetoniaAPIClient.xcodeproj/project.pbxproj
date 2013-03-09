@@ -11,14 +11,11 @@
 		3430753F16E5922E009141C6 /* LDTSetoniaAPIClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3430753E16E5922E009141C6 /* LDTSetoniaAPIClient.h */; };
 		3430754116E5922E009141C6 /* LDTSetoniaAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430754016E5922E009141C6 /* LDTSetoniaAPIClient.m */; };
 		3430754916E5922E009141C6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430754816E5922E009141C6 /* SenTestingKit.framework */; };
-		3430754B16E5922E009141C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430754A16E5922E009141C6 /* UIKit.framework */; };
 		3430754C16E5922E009141C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430753916E5922E009141C6 /* Foundation.framework */; };
 		3430754F16E5922E009141C6 /* libLDTSetoniaAPIClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430753616E5922E009141C6 /* libLDTSetoniaAPIClient.a */; };
 		3430755516E5922E009141C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3430755316E5922E009141C6 /* InfoPlist.strings */; };
 		3430755816E5922E009141C6 /* LDTSetoniaAPIClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430755716E5922E009141C6 /* LDTSetoniaAPIClientTests.m */; };
 		3430756316E59C33009141C6 /* LDTSetoniaHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430756216E59C33009141C6 /* LDTSetoniaHTTPClient.m */; };
-		3430757716E5A70F009141C6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430757616E5A70F009141C6 /* SystemConfiguration.framework */; };
-		3430757916E5A71B009141C6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430757816E5A71B009141C6 /* MobileCoreServices.framework */; };
 		3430757A16E5A77D009141C6 /* LDTSetoniaHTTPClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3430756116E59C33009141C6 /* LDTSetoniaHTTPClient.h */; };
 		3430759316E6BD7E009141C6 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430758116E6BD7E009141C6 /* AFHTTPClient.m */; };
 		3430759416E6BD7E009141C6 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430758316E6BD7E009141C6 /* AFHTTPRequestOperation.m */; };
@@ -33,6 +30,8 @@
 		3430759F16E6BE39009141C6 /* AFHTTPRequestOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3430758216E6BD7E009141C6 /* AFHTTPRequestOperation.h */; };
 		343075A016E6BE46009141C6 /* AFURLConnectionOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3430758D16E6BD7E009141C6 /* AFURLConnectionOperation.h */; };
 		343075A116E6C450009141C6 /* AFHTTPClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3430758016E6BD7E009141C6 /* AFHTTPClient.h */; };
+		349744D016EB6FDC0032DAC6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430757616E5A70F009141C6 /* SystemConfiguration.framework */; };
+		349744D116EB6FE00032DAC6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430757816E5A71B009141C6 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +70,6 @@
 		3430754016E5922E009141C6 /* LDTSetoniaAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDTSetoniaAPIClient.m; sourceTree = "<group>"; };
 		3430754716E5922E009141C6 /* LDTSetoniaAPIClientTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LDTSetoniaAPIClientTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3430754816E5922E009141C6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		3430754A16E5922E009141C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		3430755216E5922E009141C6 /* LDTSetoniaAPIClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LDTSetoniaAPIClientTests-Info.plist"; sourceTree = "<group>"; };
 		3430755416E5922E009141C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3430755616E5922E009141C6 /* LDTSetoniaAPIClientTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDTSetoniaAPIClientTests.h; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 		3430759016E6BD7E009141C6 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFXMLRequestOperation.m; path = ../Libraries/AFNetworking/AFNetworking/AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		3430759116E6BD7E009141C6 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "../Libraries/AFNetworking/AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		3430759216E6BD7E009141C6 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "../Libraries/AFNetworking/AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		7A7BEC61EE3C440BA515F7B4 /* libPods-LDTSetoniaAPIClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LDTSetoniaAPIClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3430757916E5A71B009141C6 /* MobileCoreServices.framework in Frameworks */,
-				3430757716E5A70F009141C6 /* SystemConfiguration.framework in Frameworks */,
+				349744D116EB6FE00032DAC6 /* MobileCoreServices.framework in Frameworks */,
+				349744D016EB6FDC0032DAC6 /* SystemConfiguration.framework in Frameworks */,
 				3430753A16E5922E009141C6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,7 +115,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3430754916E5922E009141C6 /* SenTestingKit.framework in Frameworks */,
-				3430754B16E5922E009141C6 /* UIKit.framework in Frameworks */,
 				3430754C16E5922E009141C6 /* Foundation.framework in Frameworks */,
 				3430754F16E5922E009141C6 /* libLDTSetoniaAPIClient.a in Frameworks */,
 			);
@@ -154,8 +150,6 @@
 				3430757616E5A70F009141C6 /* SystemConfiguration.framework */,
 				3430753916E5922E009141C6 /* Foundation.framework */,
 				3430754816E5922E009141C6 /* SenTestingKit.framework */,
-				3430754A16E5922E009141C6 /* UIKit.framework */,
-				7A7BEC61EE3C440BA515F7B4 /* libPods-LDTSetoniaAPIClient.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -235,7 +229,6 @@
 				3430753216E5922E009141C6 /* Sources */,
 				3430753316E5922E009141C6 /* Frameworks */,
 				3430753416E5922E009141C6 /* CopyFiles */,
-				787781FF4C3F4BF7B0869810 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -317,20 +310,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-		787781FF4C3F4BF7B0869810 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Pods-LDTSetoniaAPIClient-resources.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
