@@ -1,5 +1,5 @@
 SetoniaAPIClient
-=====
+====================
 
 This small project is an API Client for [Setonia](http://setonia.com).
 
@@ -14,15 +14,18 @@ This started out because I couldn't tell what Setonia was, nor what data it was 
 Are there easier ways? Sure. But not as fun :)
 
 This quickly branched into a number of "experiments":
+
 1. A workspace with multiple projects using Cocopods (failed: I couldn't get it to work. If you venture into the very early commits, you'll see the Podfile and my attempts at getting it to work, until I finally gave up. If you go look at the Cocoapods project there are existing issues related to this. Read there.)
+
 2. Using AFNetworking with an APIClient not so tightly-coupled with ViewControllers. Hence the [LDTSetoniaDataManager](https://github.com/lottadot/SetoniaAPIClient/blob/master/LDTSetoniaExample/LDTSetoniaExample/Classes/DataManager/LDTSetoniaDataManager.h) class. However, I deem this is a partial failure, because [LDTSetoniaDataManager](https://github.com/lottadot/SetoniaAPIClient/blob/master/LDTSetoniaExample/LDTSetoniaExample/Classes/Controllers/ProductDetail/LDTProductDetailViewController.h) eventually uses `setImageWithURL` from [UIImageView+AFNetworking](https://github.com/AFNetworking/AFNetworking/blob/master/AFNetworking/UIImageView%2BAFNetworking.h#L43). The view controller is able to "cheat" and use AFNetworking because AF's already linked into the LDTSetoniaAPIClient static library. I started with a imageViewForProduct:product method in the DataManager class, but that didn't work for whatever reason. And I've got to get busy with other things so this is shelved for a while. Pull requests welcome. :)
+
 3. Using AFNetworking with a malformed-service. I've run into this a few times, and each time, it's a pain in the ass. It's not AFNetworking's fault, it's the people who don't adhere to standards who are coding such services. The Setonia service returns JSON, but doesn't return valid typification. It returns "text/html". AFNetworking expects "application/json".
 
 Why is this a problem? Without the proper return type, AFNetworking won't automatically `NSJSONSerialization` the data received.
 
 Why is this a problem? I throws people who are new to a framework such as AFNetworking for a spin.
 
-By venturing into AFNetworking's innerds, one can subclass such classes as `AFJSONRequestOperation` and attempt to encouraged AFNetworking accept and process JSON not transmitted to it as JSON. I left in the `LDTSetoniaJSONRequestOperation`, `AFHTTPClient+SetoniaUtil` and `NSMutableURLRequest+SetoniaUtil` classes so people can see where I was heading with this. I'm not sure if it's the "right" approach. However, I ran out of time, so rather then use that approach I simply do my own `NSJSONSerialization` in `getPath`'s success block. I do think this is cheating. The correct way to do this would be to adjust enough that AFNetworking will return the data received from the API as JSON in `getPath`'s succes block. Hopefully I'll return to this and finish it in that regard. Pull requests welcome.
+By venturing into AFNetworking's innerds, one can subclass such classes as `AFJSONRequestOperation` and attempt to encourage AFNetworking to accept and process JSON not transmitted to it as JSON. I left in the `LDTSetoniaJSONRequestOperation`, `AFHTTPClient+SetoniaUtil` and `NSMutableURLRequest+SetoniaUtil` classes so people can see where I was heading with this. I'm not sure if it's the "right" approach. However, I ran out of time, so rather then use that approach I simply do my own `NSJSONSerialization` in `getPath`'s success block. I do think this is cheating. The correct way to do this would be to adjust enough that AFNetworking will return the data received from the API as JSON in `getPath`'s succes block. Hopefully I'll return to this and finish it in that regard. Pull requests welcome.
 
 ## Does it work?
 
