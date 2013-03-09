@@ -10,26 +10,26 @@
 
 @implementation LDTSetoniaJSONRequestOperation
 
-+ (NSSet *)defaultAcceptableContentTypes {
-    return [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/plain", @"text/html", nil];
-}
-
-
-+ (NSSet *)acceptableContentTypes {
-    return [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/plain", @"text/html", nil];
-}
-
-
-+ (BOOL)canProcessRequest:(NSURLRequest *)request {
-    return YES;
-}
-
-
-/**
- The webservice does NOT give back a MIMEType, so we'll cheat and say it's acceptable.
- */
-- (BOOL)hasAcceptableContentType {
-    return YES;
-}
+//+ (NSSet *)defaultAcceptableContentTypes {
+//    return [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/plain", @"text/html", nil];
+//}
+//
+//
+//+ (NSSet *)acceptableContentTypes {
+//    return [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/plain", @"text/html", nil];
+//}
+//
+//
+//+ (BOOL)canProcessRequest:(NSURLRequest *)request {
+//    return YES;
+//}
+//
+//
+///**
+// The webservice does NOT give back a MIMEType, so we'll cheat and say it's acceptable.
+// */
+//- (BOOL)hasAcceptableContentType {
+//    return YES;
+//}
 
 @end

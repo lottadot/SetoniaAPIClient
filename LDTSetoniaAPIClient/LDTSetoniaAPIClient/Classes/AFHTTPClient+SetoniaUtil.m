@@ -11,7 +11,7 @@
 
 @implementation AFHTTPClient (SetoniaUtil)
 
-
+// Clang will complain that this is a method within a category on a class that's a subclass. Left in for posterity.
 //- (NSMutableURLRequest *)requestWithMethod:(NSString *)method
 //                                      path:(NSString *)path
 //                                parameters:(NSDictionary *)parameters {

@@ -1,5 +1,10 @@
 #import <Foundation/Foundation.h>
 
+/**
+ A data model class for the "Product" returned by the Setonia API.
+ 
+ @discussion the API actually returns this "Product" in all of their v1 method reponses.
+ */
 @interface Product : NSObject {
 
     NSString *aSIN;

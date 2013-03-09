@@ -44,10 +44,6 @@
     [self updateViewForProduct:_product];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
 
 - (void)setProduct:(Product *)product {
     _product = product;

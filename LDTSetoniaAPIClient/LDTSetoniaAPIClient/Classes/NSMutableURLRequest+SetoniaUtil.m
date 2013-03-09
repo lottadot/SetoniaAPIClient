@@ -12,8 +12,8 @@
 
 
 - (void)LDTSetoniaPrepForIrregularHTMLReturnType {
-    [self setValue: @"text/html" forHTTPHeaderField:@"Content-Type"];
-    [self setValue:@"text/html" forHTTPHeaderField:@"Accept"];
+//    [self setValue: @"text/html" forHTTPHeaderField:@"Content-Type"];
+//    [self setValue:@"text/html" forHTTPHeaderField:@"Accept"];
 }
 
 

@@ -14,6 +14,9 @@
 @implementation LDTSetoniaDataManager
 
 
+#pragma mark - Initialization
+
+
 + (LDTSetoniaDataManager *)sharedClient {
     static LDTSetoniaDataManager *_sharedClient = nil;
     static dispatch_once_t onceToken;
@@ -36,23 +39,20 @@
 + (void)moviesWithQuery:(NSString *)query
          withCompletion:(void (^)(NSArray *movies, NSError *error))completion
            withProgress:(void (^)(NSString *progressInfo))progress {
-    
+    NSParameterAssert(query);
     [LDTSetoniaAPIClient loadMoviesFromQuery:query withBlock:^(NSArray *serviceDictionaries,
                                                                NSError *error) {
         if (nil == error) {
-            NSLog(@"moviesWithQuery has:%@", serviceDictionaries);
-            NSAssert(nil != serviceDictionaries, @"serviceDictionaries is nil");
+
             NSMutableArray *results = [[NSMutableArray alloc] init];
             
             if (nil != serviceDictionaries && [serviceDictionaries count]) {
                 for (id obj in serviceDictionaries) {
                     NSDictionary *serviceDictionary = (NSDictionary *)obj;
                     Product *p = [Product instanceFromDictionary:serviceDictionary];
-                    NSLog(@"Product:%@", [p description]);
                     [results addObject:p];
                 }
             }
-            NSLog(@"moviesWithQuery:results:%@", results);
             if (completion) {
                 completion(results, nil);
             }
@@ -69,22 +69,19 @@
 + (void)sportsWithQuery:(NSString *)query
          withCompletion:(void (^)(NSArray *movies, NSError *error))completion
            withProgress:(void (^)(NSString *progressInfo))progress {
-
+    NSParameterAssert(query);
     [LDTSetoniaAPIClient loadSportsFromQuery:query withBlock:^(NSArray *serviceDictionaries, NSError *error) {
         if (nil == error) {
-            NSLog(@"sportsWithQuery has:%@", serviceDictionaries);
-            NSAssert(nil != serviceDictionaries, @"serviceDictionaries is nil");
+            
             NSMutableArray *results = [[NSMutableArray alloc] init];
             
             if (nil != serviceDictionaries && [serviceDictionaries count]) {
                 for (id obj in serviceDictionaries) {
                     NSDictionary *serviceDictionary = (NSDictionary *)obj;
                     Product *p = [Product instanceFromDictionary:serviceDictionary];
-                    NSLog(@"Product:%@", [p description]);
                     [results addObject:p];
                 }
             }
-            NSLog(@"sportsWithQuery:results:%@", results);
             if (completion) {
                 completion(results, nil);
             }
@@ -101,22 +98,19 @@
 + (void)searchWithQuery:(NSString *)query
          withCompletion:(void (^)(NSArray *movies, NSError *error))completion
            withProgress:(void (^)(NSString *progressInfo))progress {
-
+    NSParameterAssert(query);
     [LDTSetoniaAPIClient loadSearchFromQuery:query withBlock:^(NSArray *serviceDictionaries, NSError *error) {
         if (nil == error) {
-            NSLog(@"searchWithQuery has:%@", serviceDictionaries);
-            NSAssert(nil != serviceDictionaries, @"serviceDictionaries is nil");
+
             NSMutableArray *results = [[NSMutableArray alloc] init];
             
             if (nil != serviceDictionaries && [serviceDictionaries count]) {
                 for (id obj in serviceDictionaries) {
                     NSDictionary *serviceDictionary = (NSDictionary *)obj;
                     Product *p = [Product instanceFromDictionary:serviceDictionary];
-                    NSLog(@"Product:%@", [p description]);
                     [results addObject:p];
                 }
             }
-            NSLog(@"searchWithQuery:results:%@", results);
             if (completion) {
                 completion(results, nil);
             }

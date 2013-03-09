@@ -18,17 +18,14 @@
 @implementation LDTViewController
 
 
+#pragma mark - View Lifecycle
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setTitle:NSLocalizedString(@"Search", @"Search")];
     [_searchTextField setText:@"Browns"];
-    NSAssert(nil != self.navigationController, @"self.navigationController nil");
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSAssert(nil != self.navigationController, @"navigationController nil");
 }
 
 
@@ -85,13 +82,14 @@
     }];
 }
 
+
 - (void)processResults:(NSArray *)searchResults {
     
     bool haveResults = (nil != searchResults && [searchResults count]);
     if (haveResults) {
         LDTResultsListViewController *resultsVC = [[LDTResultsListViewController alloc] init];
         [resultsVC setResults:searchResults];
-        [resultsVC setTitle:@"Search Results"];
+        [resultsVC setTitle:NSLocalizedString(@"Search Results", @"Search Results")];
         [self.navigationController pushViewController:resultsVC animated:YES];
     } else {
         // TODO (szatezalo, 2013-03-09) UIAlert for no results found.

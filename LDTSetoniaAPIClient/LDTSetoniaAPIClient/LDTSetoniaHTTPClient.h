@@ -8,6 +8,9 @@
 
 #import "AFHTTPClient.h"
 
+/**
+ A class to handle everything custom we need to use `AFHTTPClient`. 
+ */
 @interface LDTSetoniaHTTPClient : AFHTTPClient
 
 @end

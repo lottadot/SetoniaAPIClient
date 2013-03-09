@@ -17,6 +17,10 @@
 
 @implementation LDTResultsListViewController
 
+
+#pragma mark - Initialization
+
+
 - (id)initWithResults:(NSArray *)results {
     self = [super init];
     if (self) {
@@ -25,42 +29,28 @@
     return self;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
+#pragma mark - View Lifecycle
 
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [_tableView reloadData];
-    NSLog(@"results:%@", _results);
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
 #pragma mark - UITableViewDataSource
 
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [_results count];
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
@@ -94,7 +84,7 @@
     cell.detailTextLabel.text = [product title];
     cell.backgroundColor = [UIColor yellowColor];
     cell.detailTextLabel.textColor = [UIColor redColor];
-    NSLog(@"configureCell product.title:%@ product:%@", [product title], product);
 }
+
 
 @end

@@ -13,6 +13,11 @@
 
 @class LDTSetoniaHTTPClient;
 
+/**
+ `LDTSetoniaHTTPClient` communicates with the Setonia API.
+ 
+  @warning This requires the `SystemConfiguration` framework (just like AFNetworking does).
+ */
 @interface LDTSetoniaAPIClient : LDTSetoniaHTTPClient
 
 
@@ -26,7 +31,7 @@
  
  @param query an `NSString` representing the query to use
  */
-+ (void)loadMoviesFromQuery:(NSString *)query withBlock:(void (^)(NSArray *groups, NSError *error))block;
++ (void)loadMoviesFromQuery:(NSString *)query withBlock:(void (^)(NSArray *serviceDictionaries, NSError *error))block;
 
 
 /**
@@ -34,7 +39,7 @@
  
  @param query an `NSString` representing the query to use
  */
-+ (void)loadSearchFromQuery:(NSString *)query withBlock:(void (^)(NSArray *groups, NSError *error))block;
++ (void)loadSearchFromQuery:(NSString *)query withBlock:(void (^)(NSArray *serviceDictionaries, NSError *error))block;
 
 
 /**
@@ -42,7 +47,7 @@
  
  @param query an `NSString` representing the query to use
  */
-+ (void)loadSportsFromQuery:(NSString *)query withBlock:(void (^)(NSArray *groups, NSError *error))block;
++ (void)loadSportsFromQuery:(NSString *)query withBlock:(void (^)(NSArray *serviceDictionaries, NSError *error))block;
 
 
 - (UIImageView *)imageViewWithURL:(NSURL *)url;
