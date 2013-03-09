@@ -32,6 +32,10 @@
 		3441A25216EBBF0A002BA987 /* LDTProductDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3441A25016EBBF0A002BA987 /* LDTProductDetailViewController.xib */; };
 		349744D216EB6FED0032DAC6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430757D16E5A81E009141C6 /* SystemConfiguration.framework */; };
 		349744D316EB6FF20032DAC6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3430757B16E5A812009141C6 /* MobileCoreServices.framework */; };
+		34F9A90A16EBCF7300143CEB /* profile-image-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F9A90816EBCF7300143CEB /* profile-image-placeholder.png */; };
+		34F9A90B16EBCF7300143CEB /* profile-image-placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F9A90916EBCF7300143CEB /* profile-image-placeholder@2x.png */; };
+		34F9A91016EBD23700143CEB /* LDTWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F9A90E16EBD23700143CEB /* LDTWebViewController.m */; };
+		34F9A91116EBD23700143CEB /* LDTWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F9A90F16EBD23700143CEB /* LDTWebViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +84,11 @@
 		3441A24E16EBBF0A002BA987 /* LDTProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDTProductDetailViewController.h; path = Classes/Controllers/ProductDetail/LDTProductDetailViewController.h; sourceTree = "<group>"; };
 		3441A24F16EBBF0A002BA987 /* LDTProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDTProductDetailViewController.m; path = Classes/Controllers/ProductDetail/LDTProductDetailViewController.m; sourceTree = "<group>"; };
 		3441A25016EBBF0A002BA987 /* LDTProductDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LDTProductDetailViewController.xib; path = Classes/Controllers/ProductDetail/LDTProductDetailViewController.xib; sourceTree = "<group>"; };
+		34F9A90816EBCF7300143CEB /* profile-image-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "profile-image-placeholder.png"; path = "../../Libraries/AFNetworking/Example/Images/profile-image-placeholder.png"; sourceTree = "<group>"; };
+		34F9A90916EBCF7300143CEB /* profile-image-placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "profile-image-placeholder@2x.png"; path = "../../Libraries/AFNetworking/Example/Images/profile-image-placeholder@2x.png"; sourceTree = "<group>"; };
+		34F9A90D16EBD23700143CEB /* LDTWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LDTWebViewController.h; path = Classes/Controllers/WebView/LDTWebViewController.h; sourceTree = "<group>"; };
+		34F9A90E16EBD23700143CEB /* LDTWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LDTWebViewController.m; path = Classes/Controllers/WebView/LDTWebViewController.m; sourceTree = "<group>"; };
+		34F9A90F16EBD23700143CEB /* LDTWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LDTWebViewController.xib; path = Classes/Controllers/WebView/LDTWebViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +169,7 @@
 		343074F916E5913A009141C6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				34F9A90716EBCF6B00143CEB /* Images */,
 				343074FA16E5913A009141C6 /* LDTSetoniaExample-Info.plist */,
 				343074FB16E5913A009141C6 /* InfoPlist.strings */,
 				343074FE16E5913A009141C6 /* main.m */,
@@ -202,6 +212,7 @@
 		3430756916E5A2DA009141C6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				34F9A90C16EBD21900143CEB /* WebView */,
 				3430757016E5A377009141C6 /* DataManager */,
 				3430756F16E5A368009141C6 /* Results */,
 			);
@@ -228,6 +239,25 @@
 				3430757216E5A3A5009141C6 /* LDTSetoniaDataManager.m */,
 			);
 			name = DataManager;
+			sourceTree = "<group>";
+		};
+		34F9A90716EBCF6B00143CEB /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				34F9A90816EBCF7300143CEB /* profile-image-placeholder.png */,
+				34F9A90916EBCF7300143CEB /* profile-image-placeholder@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		34F9A90C16EBD21900143CEB /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				34F9A90D16EBD23700143CEB /* LDTWebViewController.h */,
+				34F9A90E16EBD23700143CEB /* LDTWebViewController.m */,
+				34F9A90F16EBD23700143CEB /* LDTWebViewController.xib */,
+			);
+			name = WebView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +339,9 @@
 				3430750F16E5913A009141C6 /* LDTViewController.xib in Resources */,
 				3430756E16E5A2F8009141C6 /* LDTResultsListViewController.xib in Resources */,
 				3441A25216EBBF0A002BA987 /* LDTProductDetailViewController.xib in Resources */,
+				34F9A90A16EBCF7300143CEB /* profile-image-placeholder.png in Resources */,
+				34F9A90B16EBCF7300143CEB /* profile-image-placeholder@2x.png in Resources */,
+				34F9A91116EBD23700143CEB /* LDTWebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +383,7 @@
 				3430756D16E5A2F8009141C6 /* LDTResultsListViewController.m in Sources */,
 				3430757316E5A3A5009141C6 /* LDTSetoniaDataManager.m in Sources */,
 				3441A25116EBBF0A002BA987 /* LDTProductDetailViewController.m in Sources */,
+				34F9A91016EBD23700143CEB /* LDTWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

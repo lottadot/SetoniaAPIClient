@@ -12,7 +12,7 @@
 #import "LDTProductDetailViewController.h"
 
 @interface LDTResultsListViewController ()
-
+@property (nonatomic, strong) LDTProductDetailViewController *detailViewController;
 @end
 
 @implementation LDTResultsListViewController
@@ -79,8 +79,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Product *product = (Product *)[_results objectAtIndex:indexPath.row];
-    LDTProductDetailViewController *detailVC = [[LDTProductDetailViewController alloc] initWithProduct:product];
-    [self.navigationController pushViewController:detailVC animated:YES];
+    if (nil == _detailViewController) {
+        _detailViewController = [[LDTProductDetailViewController alloc] initWithProduct:product];
+    } else {
+        [_detailViewController setProduct:product];
+    }
+    [self.navigationController pushViewController:_detailViewController animated:YES];
 }
 
 

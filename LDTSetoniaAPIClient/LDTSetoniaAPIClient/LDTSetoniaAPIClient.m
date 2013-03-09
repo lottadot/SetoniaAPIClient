@@ -197,7 +197,9 @@
     NSParameterAssert(url);
     UIImageView *iv = [[UIImageView alloc] init];
     if (url) {
-        [iv setImageWithURL:url];
+        //[iv setImageWithURL:url];
+        [iv setImageWithURL:url
+           placeholderImage:[UIImage imageNamed:@"profile-image-placeholder"]];
     }
     return iv;
 }

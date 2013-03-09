@@ -183,14 +183,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">productImageView</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="977380056"/>
-					</object>
-					<int key="connectionID">11</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">productTitleLabel</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="531220854"/>
@@ -212,6 +204,14 @@
 						<reference key="destination" ref="536176808"/>
 					</object>
 					<int key="connectionID">41</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">productImageView</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="977380056"/>
+					</object>
+					<int key="connectionID">44</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -299,7 +299,7 @@
 								<float key="scoringTypeFloat">9</float>
 								<int key="contentType">3</int>
 							</object>
-							<object class="IBNSLayoutConstraint" id="1072117889">
+							<object class="IBNSLayoutConstraint" id="294077451">
 								<reference key="firstItem" ref="531220854"/>
 								<int key="firstAttribute">4</int>
 								<int key="relation">0</int>
@@ -572,7 +572,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">43</int>
-						<reference key="object" ref="1072117889"/>
+						<reference key="object" ref="294077451"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>
@@ -588,7 +588,7 @@
 					<reference ref="995766299"/>
 					<reference ref="646030707"/>
 					<reference ref="668995496"/>
-					<reference ref="1072117889"/>
+					<reference ref="294077451"/>
 					<reference ref="957211384"/>
 					<reference ref="1064921234"/>
 					<reference ref="218603669"/>
@@ -632,7 +632,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">43</int>
+			<int key="maxID">44</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
